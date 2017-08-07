@@ -271,6 +271,10 @@ if &t_Co > 255
    endif
 end
 
+if has_key(s:overrides, "background") && has_key(s:overrides["background"], "guibg")
+    let s:background_color = s:overrides["background"]["guibg"]
+endif
+
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
